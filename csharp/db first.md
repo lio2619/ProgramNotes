@@ -22,3 +22,4 @@ dotnet ef dbcontext scaffold "server=localhost;Port=3306;Database=yourdatabase; 
 ## 參考資料
 [[Day05] Entity Framework Core與DB First - 我與 ASP.NET Core 3 的 30天 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天 (ithome.com.tw)](https://ithelp.ithome.com.tw/articles/10240045)
 [c# - Your startup project doesn't reference Microsoft.EntityFrameworkCore.Design - Stack Overflow](https://stackoverflow.com/questions/52536588/your-startup-project-doesnt-reference-microsoft-entityframeworkcore-design)
+#net #db
