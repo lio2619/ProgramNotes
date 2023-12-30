@@ -19,6 +19,13 @@ dotnet ef dbcontext scaffold "server=localhost;Port=3306;Database=yourdatabase; 
 * -c 後面接context要叫甚麼名字
 * -f 會把輸出的東西覆蓋掉
 
+## 注意事項
+
+* 如果執行指令時出現以下錯誤訊息，先檢查一下程式碼有沒有錯誤，有錯誤的話改掉，再把程式重新編譯一次就可以了
+```powershell
+Build failed. Use dotnet build to see the errors.
+```
+
 ## 參考資料
 [[Day05] Entity Framework Core與DB First - 我與 ASP.NET Core 3 的 30天 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天 (ithome.com.tw)](https://ithelp.ithome.com.tw/articles/10240045)
 [c# - Your startup project doesn't reference Microsoft.EntityFrameworkCore.Design - Stack Overflow](https://stackoverflow.com/questions/52536588/your-startup-project-doesnt-reference-microsoft-entityframeworkcore-design)
