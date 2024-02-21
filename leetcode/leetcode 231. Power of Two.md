@@ -15,7 +15,6 @@
 **Input:** n = 16
 **Output:** true
 **Explanation:** 2^4 = 16
-
 ###### 3
 **Input:** n = 3
 **Output:** false
