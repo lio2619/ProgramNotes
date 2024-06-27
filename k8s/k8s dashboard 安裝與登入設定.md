@@ -11,7 +11,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/a
 kubectl edit deployment kubernetes-dashboard -n kubernetes-dashboard
 ```
 
-* 一開始是沒有紅框裡面的東西的，所以它會自動將dashboard登出，鳩算token還沒過期也是一樣
+* 一開始是沒有紅框裡面的東西的，所以它會自動將dashboard登出，就算token還沒過期也是一樣
 * 加入紅框的文字代表不會自動登出，如果超出token時間會報401
 * 注意排版跟參數對不對，如果不對不會讓你修改
 ![[Pasted image 20240424174301.png]]
