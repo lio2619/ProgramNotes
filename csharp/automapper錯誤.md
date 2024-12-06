@@ -1,7 +1,7 @@
 ## 問題
 
 ![[Pasted image 20241115112300.png]]
-* 看起來是因為automapper對到錯誤的東西，所以才會發生錯誤
+* 看起來是因為automapper映射到錯誤的東西，所以才會發生錯誤
 ## 解決
 
 ```csharp
@@ -12,7 +12,6 @@ services.AddAutoMapper(cfg => cfg.ShouldMapMethod = (m => false));
 ![[Pasted image 20241115112107.png]]
 
 * 看網路上他們是說如果是automapper11.0.0以上要用以下程式碼解決
-```csharp
 ```csharp
 using AutoMapper;
 using AutoMapper.Internal;
