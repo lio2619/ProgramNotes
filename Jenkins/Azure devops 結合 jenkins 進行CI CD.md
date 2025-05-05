@@ -39,3 +39,10 @@ psexec /accepteula \\192.168.100.XXX powershell -Command "Start-WebSite -Name 'I
 ![[Pasted image 20250307173141.png]]
 ![[Pasted image 20250307173210.png]]
 * 這邊輸入ngrok
+
+
+#CICD #Azure #Jenkin 
+
+## 內部連接
+[[Service Connection]]
+[[pipelines 相關設定]]
