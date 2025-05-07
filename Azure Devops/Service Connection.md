@@ -42,11 +42,17 @@
 6. **保存設定**：
     
     - 確保所有變更已保存。
+ 
+ **沒有設定的話會出現以下錯誤**
+ ```
+ ERROR: TF401027: You need the Git 'PullRequestContribute' permission to perform this action. Details: identity 'Build\62b0e1f2-5457-4789-a7c8-ef0f3c889443', scope 'repository'.
+```
 
 ## 參考資料
 [azure devops token](https://learn.microsoft.com/zh-tw/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=azure-devops&tabs=Windows)
 [service connect 相關資訊](https://learn.microsoft.com/zh-tw/azure/devops/pipelines/library/connect-to-azure?view=azure-devops&WT.mc_id=DT-MVP-4015686#create-an-azure-resource-manager-service-connection-using-workload-identity-federation)
 https://learn.microsoft.com/zh-tw/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml
+[TF401027: You need the Git ‘PullRequestContribute’ permission to perform this action | Fix/Solution – AzureDevOps Guide](https://www.azuredevopsguide.com/tf401027-you-need-the-git-pullrequestcontribute-permission-to-perform-this-action-fix-solution/)
 ## 內部連接
 [[Azure devops 結合 jenkins 進行CI CD]]
 [[pipelines 相關設定]]
