@@ -27,4 +27,4 @@ request.ContentType = "application/json";
 ## 參考資料
 [POST - HTTP | MDN (mozilla.org)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST)
 
-#newwrok #error #postmethod
+#netwrok #error #postmethod
