@@ -11,7 +11,8 @@
 	</PropertyGroup> 
 	<ItemGroup> 
 		<PackageReference Include="Dapper" Version="2.1.66" /> 
-		<PackageReference Include="EFCore.BulkExtensions" Version="9.0.1" /> <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" /> 
+		<PackageReference Include="EFCore.BulkExtensions" Version="9.0.1" /> 
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" /> 
 	</ItemGroup> 
 </Project>
 ```
