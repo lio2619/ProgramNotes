@@ -94,7 +94,7 @@ namespace GeminiCliMCPServer
 
 ```
 ## Gemini Cli 設定檔
-* cli 設定檔位置：
+* cli 設定檔位置：C:\Users\lio26\.gemini
 * 原始gemini cli setting
 ```json
 {
