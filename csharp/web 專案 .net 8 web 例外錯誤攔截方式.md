@@ -2,6 +2,7 @@
 * 雖然在專案裡面通常都會將程式碼用 try catch包起來，但是難免會有漏掉或是其他未預期的問題。
 * 因此需要在 web 專案啟動時將相關的middleware fillter註冊好
 ## 處理方式
+### filter 紀錄錯誤訊息方式
 * 以下為記錄log的filter
 ```csharp
 using Microsoft.AspNetCore.Mvc.Filters;
@@ -28,6 +29,48 @@ namespace Lib.Infra.BaseUI.MVC.Attributes
         }
     }
 }
+```
+* 然後在 **AddControllersWithViews** 裡面註冊他
+```csharp
+builder.Services.AddControllersWithViews
+    (options =>
+    {
+		options.Filters.Add(typeof(ExceptionLoggingFilter));
+    })
+    .AddApplicationPart(typeof(BaseController).Assembly)
+    .AddDataAnnotationsLocalization()
+    .AddViewLocalization()
+```
+### UseExceptionHandler 紀錄錯誤訊息的方式
+* 以下程式碼可以參考
+```csharp
+app.UseExceptionHandler(errorApp =>
+    {
+        errorApp.Run(async context =>
+        {
+            var exceptionFeature = context.Features.Get<IExceptionHandlerPathFeature>();
+            var exception = exceptionFeature?.Error;
+
+            // 取得 NLog Logger
+            var logger = NLog.LogManager.GetLogger("WebLog");
+
+            // 記錄錯誤（包含路徑與例外訊息）
+            var logEvent = new LogEventInfo(LogLevel.Error, logger.Name, "Unhandled exception occurred");
+            logEvent.Message = exception.ToString();
+            logEvent.Properties["LogPath"] = Setting.LogPath;
+            logEvent.Properties["App"] = "Fatal";
+            logEvent.Properties["FileName"] = $"{DateTime.Now.ToString("yyyy-MM-dd")}.log";
+
+            logger.Log(logEvent);
+
+            // 固定導向錯誤頁面（不帶錯誤訊息）
+            var controller = "Error";
+            var action = "Index";
+            var redirectUrl = $"/{controller}/{action}";
+
+            context.Response.Redirect(redirectUrl);
+        });
+    });
 ```
 ## 順序
 * 在程式碼裡面有多個地方可以進行攔截，例如在 **UseExceptionHandler** 或 **AddControllersWithViews** 裡面的filter。
